@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../auth/login.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  user:firebase.User;
+
+  constructor(
+    private loginService: LoginService
+  ) { }
 
   ngOnInit() {
+    this.loginService.getLoggedInUser()
+    .subscribe(user => {
+      this.user = user;
+    })
+  }
+
+  logout(){
+    this.loginService.logout();
   }
 
 }

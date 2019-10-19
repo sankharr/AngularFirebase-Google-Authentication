@@ -1,5 +1,6 @@
-<h3>User Logged {{ user?.displayName }}</h3>
-<button 
+<!-- <h3>User Logged {{ user?.displayName }}</h3> -->
+<button
+mat-raised-button color="primary" 
 *ngIf="!user"
 (click)="loginGoogle()">Login with Google</button>
-<button *ngIf="user" (click)="logout()">Log Out</button>
+<!-- <button *ngIf="user" (click)="logout()">Log Out</button> -->
