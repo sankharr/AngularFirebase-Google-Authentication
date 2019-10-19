@@ -7,17 +7,22 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './auth/login/login.component';
+import { MaterialModule } from './material-module';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
